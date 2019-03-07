@@ -1,0 +1,21 @@
+{
+  "name": "ipaddressinfo-serverless",
+  "version": "1.0.0",
+  "description": "repo for serverless with aws",
+  "scripts": {
+    "test": "jest",
+    "dev": "sls offline start --port 4500"
+  },
+  "author": "Ryan Williams <ryanjacobwilliams@gmail.com> http://www.ryanjwilliams.io",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.1.0",
+    "supertest": "^3.4.2"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "node-fetch": "^2.3.0",
+    "serverless-http": "^1.9.1",
+    "serverless-offline": "^4.8.1"
+  }
+}
