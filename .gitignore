@@ -1,4 +1,4 @@
-# .env
+.env
 .prettierrc
 node_modules
 serverless.yml

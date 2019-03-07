@@ -1,5 +1,7 @@
 'use strict';
 const fetch = require('node-fetch');
+const api_url = 'https://www.whoisxmlapi.com/whoisserver/WhoisService';
+const api_key = process.env.API_KEY;
 
 module.exports.handler = (event, context, callback) => {
   let done = (err, res) => {
@@ -27,8 +29,8 @@ module.exports.handler = (event, context, callback) => {
     }
   };
 
-  let getExternalData = () => {
-    const url = 'https://jsonplaceholder.typicode.com/comments?postId=1';
+  let getExternalData = domain => {
+    let url = `${api_url}?apiKey=${api_key}&domainName=${domain}&outputFormat=JSON`;
 
     return fetch(url, {
       method: 'GET',
@@ -51,7 +53,7 @@ module.exports.handler = (event, context, callback) => {
 
   // try catch in case it breaks
   try {
-    getExternalData();
+    getExternalData(event.body);
   } catch (error) {
     done(error);
   }

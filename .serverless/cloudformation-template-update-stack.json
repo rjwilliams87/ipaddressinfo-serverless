@@ -103,7 +103,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/ipaddress-serverless/dev/1551981791113-2019-03-07T18:03:11.113Z/ipaddress-serverless.zip"
+          "S3Key": "serverless/ipaddress-serverless/dev/1551987075151-2019-03-07T19:31:15.151Z/ipaddress-serverless.zip"
         },
         "FunctionName": "ipaddress-serverless-dev-api",
         "Handler": "src/api.handler",
@@ -122,14 +122,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "ApiLambdaVersionRMAyQuVQwnHiqWvnHwfFoS7fzlYdfFNNGcjYBDJvZw": {
+    "ApiLambdaVersion25W5wtts5dPs2Lc5oYysam2Za8vT7f93WOi2BlWD318": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ApiLambdaFunction"
         },
-        "CodeSha256": "eE28v7AYGliuduy/ozMr2KDyXXLiP8cs0ahu1NzZEiE="
+        "CodeSha256": "X7DSxSvKCONDVVcCVBTeyNKfLphUO6Tg91qemi5KaEo="
       }
     },
     "ApiGatewayRestApi": {
@@ -173,7 +173,7 @@
               "ResponseParameters": {
                 "method.response.header.Access-Control-Allow-Origin": "'*'",
                 "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
-                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET'",
+                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
                 "method.response.header.Access-Control-Allow-Credentials": "'false'"
               },
               "ResponseTemplates": {
@@ -193,10 +193,10 @@
         }
       }
     },
-    "ApiGatewayMethodGet": {
+    "ApiGatewayMethodPost": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
-        "HttpMethod": "GET",
+        "HttpMethod": "POST",
         "RequestParameters": {},
         "ResourceId": {
           "Fn::GetAtt": [
@@ -239,7 +239,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1551981791141": {
+    "ApiGatewayDeployment1551987075201": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -249,7 +249,7 @@
       },
       "DependsOn": [
         "ApiGatewayMethodOptions",
-        "ApiGatewayMethodGet"
+        "ApiGatewayMethodPost"
       ]
     },
     "ApiLambdaPermissionApiGateway": {
@@ -309,7 +309,7 @@
     "ApiLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ApiLambdaVersionRMAyQuVQwnHiqWvnHwfFoS7fzlYdfFNNGcjYBDJvZw"
+        "Ref": "ApiLambdaVersion25W5wtts5dPs2Lc5oYysam2Za8vT7f93WOi2BlWD318"
       }
     },
     "ServiceEndpoint": {
