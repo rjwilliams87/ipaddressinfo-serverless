@@ -9,7 +9,9 @@ module.exports.handler = (event, context, callback) => {
         body: JSON.stringify({
           type: 'error'
         }),
-        headers: {}
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        }
       });
     } else {
       callback(null, {
@@ -18,7 +20,9 @@ module.exports.handler = (event, context, callback) => {
           type: 'success',
           done: res
         }),
-        headers: {}
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        }
       });
     }
   };
